@@ -1,0 +1,8 @@
+Cara install webapi :
+- dotnet new webapi -n NamaProject
+- cd NamaProject
+
+jalankan :
+- dotnet watch run
+
+http://localhost:5101/weatherforecast
