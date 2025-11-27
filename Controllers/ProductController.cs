@@ -33,9 +33,14 @@ namespace RestApi.Controllers
             //                 .ToListAsync();
 
             // DTO & Mapper
+            // var products = await _db.Products
+            //                 .Select(p => ProductMapper.ToProductDto(p))
+            //                 .ToListAsync();
+
+            // include Categories
             var products = await _db.Products
-                            .Select(p => ProductMapper.ToProductDto(p))
-                            .ToListAsync();
+                        .Include(p => p.Categories)
+                        .ToListAsync();
 
             return Ok(new
             {

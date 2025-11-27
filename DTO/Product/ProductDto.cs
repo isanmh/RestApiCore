@@ -1,5 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
+using RestApi.DTO.Category;
 
 namespace RestApi.DTO.Product
 {
@@ -16,6 +17,11 @@ namespace RestApi.DTO.Product
 
         [Required]
         public string? Description { get; set; }
+
+        // list Categories
+        public List<CategoryDto>? Categories { get; set; }
+
+        // public List<CategoryDto> Categories { get; set; } = new List<CategoryDto>();
 
     }
 }

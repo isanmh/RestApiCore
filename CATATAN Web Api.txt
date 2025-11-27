@@ -64,3 +64,12 @@ var products = await _db.Products
 
 - di Program.cs tambahkan service repository
 builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
+
+### Agar tidak terjadi loop saat menampilkan relasi ###
+- Microsoft.AspNetCore.Mvc.NewtonsoftJson
+- di Program.cs tambahkan
+
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling =
+        Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
