@@ -1,8 +1,38 @@
 Cara install webapi :
-- dotnet new webapi -n NamaProject
+- dotnet new webapi -o NamaProject
+
+dotnet new webapi --use-controllers -o TodoApi
+cd TodoApi
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+code -r .
+
+
 - cd NamaProject
 
 jalankan :
 - dotnet watch run
 
 http://localhost:5101/weatherforecast
+
+// instalasi service controller
+builder.Services.AddControllers();
+
+// controllers
+app.MapControllers();
+
+install package :
+- dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+- dotnet add package Microsoft.EntityFrameworkCore.Tools
+- dotnet add package Microsoft.EntityFrameworkCore.Design
+
+buat koneksi di Program.cs
+using Microsoft.EntityFrameworkCore;
+using RestApi.Models;
+// koneksi database
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
+
+- Migrasi database :
+- dotnet tool install --global dotnet-ef
+- dotnet ef migrations add InitialCreate
+- dotnet ef database update
