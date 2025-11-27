@@ -26,5 +26,28 @@ namespace RestApi.Controllers
                 Data = products
             });
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProductById(int id)
+        {
+            if (_db.Products == null)
+            {
+                return NotFound();
+            }
+            // var product = await _db.Products.FindAsync(id);
+            var products = await _db.Products
+                            .Where(p => p.Id == id)
+                            .ToListAsync();
+            if (products == null)
+            {
+                return NotFound();
+            }
+            return Ok(new
+            {
+                StatusCode = 200,
+                Message = "Get product by id success",
+                Data = products,
+            });
+        }
     }
 }
