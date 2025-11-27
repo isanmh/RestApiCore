@@ -23,8 +23,9 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 // instalasi service controller
 builder.Services.AddControllers();
 
-// Servide Dependency Injection (DI) buatan kita
+// Service Dependency Injection (DI) buatan kita
 builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
+builder.Services.AddScoped<IProductRepo, ProductRepo>();
 
 var app = builder.Build();
 
