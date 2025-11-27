@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
+using RestApi.Interfaces;
 using RestApi.Models;
+using RestApi.Repo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // instalasi service controller
 builder.Services.AddControllers();
+
+// Servide Dependency Injection (DI) buatan kita
+builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 
 var app = builder.Build();
 
