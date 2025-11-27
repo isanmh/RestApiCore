@@ -31,5 +31,22 @@ namespace RestApi.Controllers
                 Data = categoryDto
             });
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var category = await _categoryRepo.GetByIdAsync(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            var categoryDto = category?.ToCategoryDto();
+            return Ok(new
+            {
+                statusCode = "200",
+                message = "Data category berhasil diambil",
+                Data = categoryDto
+            });
+        }
     }
 }
