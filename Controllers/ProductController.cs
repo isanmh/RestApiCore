@@ -1,5 +1,6 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using RestApi.DTO.Product;
 using RestApi.Helpers;
@@ -20,6 +21,8 @@ namespace RestApi.Controllers
         }
         // test api
         [HttpGet]
+        // [DisableRateLimiting]
+        [EnableRateLimiting("Fixed")]
         public async Task<IActionResult> GetAllProducts()
         {
             // var products = await _db.Products.ToListAsync();

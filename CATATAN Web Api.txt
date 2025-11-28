@@ -95,3 +95,9 @@ using Swashbuckle.AspNetCore.ScalarUI;
 app.MapScalarApiRe
 
 http://localhost:5101/scalar-api-docs
+
+### Scallar ###
+- install package :
+Scalar.AspNetCore
+
+### Rate Limmiter ###

@@ -13,6 +13,7 @@
           "Microsoft.AspNetCore.OpenApi": "10.0.0",
           "Microsoft.EntityFrameworkCore.Design": "10.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0",
+          "Scalar.AspNetCore": "2.11.0",
           "Swashbuckle.AspNetCore": "10.0.1"
         },
         "runtime": {
@@ -751,6 +752,14 @@
           }
         }
       },
+      "Scalar.AspNetCore/2.11.0": {
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.11.0.0",
+            "fileVersion": "2.11.0.0"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/10.0.1": {
         "dependencies": {
           "Swashbuckle.AspNetCore.Swagger": "10.0.1",
@@ -1247,6 +1256,13 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zOV12+2VE6Tsb3U3YRtJtVABmzbAEPEkiYLAckHBgUuj6suarSp3kA4HE3UU9kNQmJrU6xrD5GTOAtwVENMgJQ==",
+      "path": "scalar.aspnetcore/2.11.0",
+      "hashPath": "scalar.aspnetcore.2.11.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/10.0.1": {
       "type": "package",

@@ -219,3 +219,4 @@ C:\Users\inixindo\Desktop\Training ASP\RestApi\bin\Debug\net10.0\Swashbuckle.Asp
 C:\Users\inixindo\Desktop\Training ASP\RestApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\inixindo\Desktop\Training ASP\RestApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\inixindo\Desktop\Training ASP\RestApi\bin\Debug\net10.0\AspNetCore.Scalar.dll
+C:\Users\inixindo\Desktop\Training ASP\RestApi\bin\Debug\net10.0\Scalar.AspNetCore.dll
