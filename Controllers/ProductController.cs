@@ -168,5 +168,21 @@ namespace RestApi.Controllers
                 Pagination = pagination
             });
         }
+
+        // pagination
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchProductByName([FromQuery] string name)
+        {
+            var products = await _db.Products
+                            .Where(p => p.Name.Contains(name)) // like %name%
+                            .Select(p => ProductMapper.ToProductDto(p))
+                            .ToListAsync();
+            return Ok(new
+            {
+                StatusCode = 200,
+                Message = "Search product by name success: " + name,
+                Data = products
+            });
+        }
     }
 }
