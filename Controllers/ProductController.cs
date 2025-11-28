@@ -2,6 +2,7 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RestApi.DTO.Product;
+using RestApi.Helpers;
 using RestApi.Mappers;
 using RestApi.Models;
 
@@ -133,6 +134,38 @@ namespace RestApi.Controllers
             {
                 StatusCode = 200,
                 Message = "Delete product success",
+            });
+        }
+
+        // pagination
+        [HttpGet("paginate")]
+        public async Task<IActionResult> GetProductPaginated([FromQuery] int pageNumber, [FromQuery] int pageSize)
+        {
+            var totalRecords = await _db.Products.CountAsync();
+            var skip = (pageNumber - 1) * pageSize;
+
+            // descending order by Id
+            var products = await _db.Products.Include(c => c.Categories)
+                            .OrderByDescending(p => p.Id)
+                            .Skip(skip)
+                            .Take(pageSize)
+                            .Select(p => ProductMapper.ToProductDto(p))
+                            .ToListAsync();
+
+            // panggil pagination object
+            var pagination = new PaginationObject
+            {
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalRecords = totalRecords,
+            };
+
+            return Ok(new
+            {
+                StatusCode = 200,
+                Message = "Get paginated products success",
+                Data = products,
+                Pagination = pagination
             });
         }
     }
