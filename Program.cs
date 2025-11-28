@@ -1,4 +1,7 @@
 
+using AspNetCore.Scalar;
+
+
 using Microsoft.EntityFrameworkCore;
 using RestApi.Interfaces;
 using RestApi.Models;
@@ -33,6 +36,18 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    // swagger ui
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "Training API ASP.NET Core 10");
+    });
+
+    // Scalar UI
+    app.UseScalar(options =>
+    {
+        options.SpecUrl = "/openapi/v1.json";
+        options.DocumentTitle = "Training API ASP.NET Core 10 - Scalar UI";
+    });
 }
 
 app.UseHttpsRedirection();

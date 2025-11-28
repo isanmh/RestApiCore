@@ -8,13 +8,23 @@
     ".NETCoreApp,Version=v10.0": {
       "RestApi/1.0.0": {
         "dependencies": {
+          "AspNetCore.Scalar": "1.2.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "10.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.0",
           "Microsoft.EntityFrameworkCore.Design": "10.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0",
+          "Swashbuckle.AspNetCore": "10.0.1"
         },
         "runtime": {
           "RestApi.dll": {}
+        }
+      },
+      "AspNetCore.Scalar/1.2.0": {
+        "runtime": {
+          "lib/net8.0/AspNetCore.Scalar.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Azure.Core/1.47.1": {
@@ -77,7 +87,7 @@
       },
       "Microsoft.AspNetCore.OpenApi/10.0.0": {
         "dependencies": {
-          "Microsoft.OpenApi": "2.0.0"
+          "Microsoft.OpenApi": "2.3.0"
         },
         "runtime": {
           "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
@@ -695,11 +705,11 @@
           }
         }
       },
-      "Microsoft.OpenApi/2.0.0": {
+      "Microsoft.OpenApi/2.3.0": {
         "runtime": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
           }
         }
       },
@@ -738,6 +748,43 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.2.22727"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore/10.0.1": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.0.1",
+          "Swashbuckle.AspNetCore.SwaggerGen": "10.0.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "10.0.1"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/10.0.1": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.3.0"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.1.1964"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/10.0.1": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.1.1964"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/10.0.1": {
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.1.1964"
           }
         }
       },
@@ -920,6 +967,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AspNetCore.Scalar/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DVdi1d+7nyke9pX4Jq1Gws+8CCHoVVQ+7RJeEWBtV5WlyV5q+bzIoA8g2m1vctLTweaQEGAtHyHOBAzkuAYzAw==",
+      "path": "aspnetcore.scalar/1.2.0",
+      "hashPath": "aspnetcore.scalar.1.2.0.nupkg.sha512"
     },
     "Azure.Core/1.47.1": {
       "type": "package",
@@ -1159,12 +1213,12 @@
       "path": "microsoft.net.stringtools/17.14.28",
       "hashPath": "microsoft.net.stringtools.17.14.28.nupkg.sha512"
     },
-    "Microsoft.OpenApi/2.0.0": {
+    "Microsoft.OpenApi/2.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
-      "path": "microsoft.openapi/2.0.0",
-      "hashPath": "microsoft.openapi.2.0.0.nupkg.sha512"
+      "sha512": "sha512-5RZpjyt0JMmoc/aEgY9c1vE5pusdDGvkPl9qKIy9KFbRiIXD+w7gBJxX+unSjzzOcfgRoYxnO4okZyqDAL2WEw==",
+      "path": "microsoft.openapi/2.3.0",
+      "hashPath": "microsoft.openapi.2.3.0.nupkg.sha512"
     },
     "Microsoft.SqlServer.Server/1.0.0": {
       "type": "package",
@@ -1193,6 +1247,34 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-177+JNAV5TNvy8gLCdrcWBY9n2jdkxiHQDY4vhaExeqUpKrOqDatCcm/kW3kze60GqfnZ2NobD/IKiAPOL+CEw==",
+      "path": "swashbuckle.aspnetcore/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.10.0.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HJYFSP18YF1Z6LCwunL+v8wuZUzzvcjarB8AJna/NVVIpq11FH9BW/D/6abwigu7SsKRbisStmk8xu2mTsxxHg==",
+      "path": "swashbuckle.aspnetcore.swagger/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.swagger.10.0.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vMMBDiTC53KclPs1aiedRZnXkoI2ZgF5/JFr3Dqr8KT7wvIbA/MwD+ormQ4qf25gN5xCrJbmz/9/Z3RrpSofMA==",
+      "path": "swashbuckle.aspnetcore.swaggergen/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.10.0.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a2eLI/fCxJ3WH+H1hr7Q2T82ZBk20FfqYBEZ9hOr3f+426ZUfGU2LxYWzOJrf5/4y6EKShmWpjJG01h3Rc+l6Q==",
+      "path": "swashbuckle.aspnetcore.swaggerui/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.10.0.1.nupkg.sha512"
     },
     "System.ClientModel/1.5.1": {
       "type": "package",

@@ -73,3 +73,25 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling =
         Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
+
+
+### Dokumentasi Web API dengan Swagger ###
+http://localhost:5101/openapi/v1.json
+
+tambahkan di / Package :
+- dotnet add package Swashbuckle.AspNetCore
+- di Program.cs tambahkan
+using Microsoft.OpenApi.Models;
+app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "Training API ASP.NET Core 10");
+    });
+
+### Scalar UI ###
+- install package :
+- dotnet add package Swashbuckle.AspNetCore.ScalarUI
+- di Program.cs tambahkan
+using Swashbuckle.AspNetCore.ScalarUI;  
+app.MapScalarApiRe
+
+http://localhost:5101/scalar-api-docs
