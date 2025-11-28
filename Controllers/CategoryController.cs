@@ -96,5 +96,18 @@ namespace RestApi.Controllers
                 Data = category.ToCategoryDto()
             });
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            var deleted = await _categoryRepo.DeleteAsync(id);
+            if (!deleted)
+            {
+                return NotFound(
+                    new { Message = "Category not found" }
+                );
+            }
+            return Ok();
+        }
     }
 }
