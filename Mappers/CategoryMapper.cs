@@ -15,5 +15,13 @@ namespace RestApi.Mappers
                 ProductId = category.ProductId
             };
         }
+        public static Category ToCategoryFromUpdate(this UpdateCategoryDto category, int productId)
+        {
+            return new Category
+            {
+                Name = category.Name,
+                ProductId = productId
+            };
+        }
     }
 }

@@ -79,5 +79,22 @@ namespace RestApi.Controllers
                 }
             );
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCategory([FromRoute] int id, [FromBody] UpdateCategoryDto updateDto)
+        {
+            var category = await _categoryRepo.UpdateAsync(id, updateDto.ToCategoryFromUpdate(id));
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return StatusCode(200, new
+            {
+                statusCode = "200",
+                message = "Data category berhasil diupdate",
+                Data = category.ToCategoryDto()
+            });
+        }
     }
 }
